@@ -16,8 +16,10 @@ export default function GameTable() {
     }
 
     const handleClick = ({ line, linePosition }) => {
-        fillMatriz({ line, linePosition });
-        switchCurrentPlayer();
+        if (matriz[line][linePosition]["value"] === 0) {
+            fillMatriz({ line, linePosition });
+            switchCurrentPlayer();
+        }
     }
 
     return (
